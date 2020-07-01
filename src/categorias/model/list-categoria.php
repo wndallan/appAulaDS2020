@@ -48,6 +48,8 @@
         $dados = [];
 
         while ($linha = mysqli_fetch_assoc($resultado)) {
+
+            $linha['ativo'] = ($linha['ativo'] === 'S') ? 'Ativado' : 'Desativado'; 
             
             $dados[] = array_map('utf8_encode', $linha);
 
